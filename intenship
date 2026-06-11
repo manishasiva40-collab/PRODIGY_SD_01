@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double temp;
+    char unit;
+
+    cout << "Enter temperature value: ";
+    cin >> temp;
+
+    cout << "Enter unit (C for Celsius, F for Fahrenheit, K for Kelvin): ";
+    cin >> unit;
+
+    if (unit == 'C' || unit == 'c') {
+        double fahrenheit = (temp * 9.0 / 5.0) + 32;
+        double kelvin = temp + 273.15;
+
+        cout << "Fahrenheit: " << fahrenheit << " F" << endl;
+        cout << "Kelvin: " << kelvin << " K" << endl;
+    }
+    else if (unit == 'F' || unit == 'f') {
+        double celsius = (temp - 32) * 5.0 / 9.0;
+        double kelvin = celsius + 273.15;
+
+        cout << "Celsius: " << celsius << " C" << endl;
+        cout << "Kelvin: " << kelvin << " K" << endl;
+    }
+    else if (unit == 'K' || unit == 'k') {
+        double celsius = temp - 273.15;
+        double fahrenheit = (celsius * 9.0 / 5.0) + 32;
+
+        cout << "Celsius: " << celsius << " C" << endl;
+        cout << "Fahrenheit: " << fahrenheit << " F" << endl;
+    }
+    else {
+        cout << "Invalid unit entered!" << endl;
+    }
+
+    return 0;
+}
